@@ -8,4 +8,9 @@ defmodule Questions do
     |> Enum.reject(fn(v) -> v == "" end) 
   end
 
+  def random_question do
+    question_list()
+    |> Enum.random()
+  end
+
 end

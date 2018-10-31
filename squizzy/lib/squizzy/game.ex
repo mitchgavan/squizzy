@@ -12,4 +12,5 @@ defmodule Squizzy.Game do
   def new_game() do
     %Squizzy.Game{}
   end
+
 end
