@@ -1,7 +1,9 @@
 defmodule Squizzy do
+  @moduledoc """
+  Squizzy keeps the contexts that define your domain
+  and business logic.
 
-  alias Squizzy.Game
-
-  defdelegate new_game(), to: Game
-
+  Contexts are also responsible for managing your data, regardless
+  if it comes from the database, an external API or others.
+  """
 end
