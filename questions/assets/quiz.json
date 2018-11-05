@@ -1,0 +1,52 @@
+[
+  {
+    "answer": 2,
+    "question": "Who directed the 1983 film 'ET the Extra-Terrestrial'?",
+    "options": [
+      "Drew Barrymore",
+      "Robin Williams",
+      "Steven Spielberg",
+      "Tom Hanks"
+    ]
+  },
+  {
+    "answer": 3,
+    "question": "What is the highest point on the Earth's continental crust?",
+    "options": [
+      "Annapurna",
+      "K2",
+      "Lhotse",
+      "Mount Everest"
+    ]
+  },
+  {
+    "answer": 2,
+    "question": "Which two colours make purple?",
+    "options": [
+      "Blue and Yellow",
+      "Green and Orange",
+      "Red and Blue",
+      "Red and Green"
+    ]
+  },
+  {
+    "answer": 1,
+    "question": "What is the square root of 9?",
+    "options": [
+      "1",
+      "3",
+      "27",
+      "81"
+    ]
+  },
+  {
+    "answer": 3,
+    "question": "Which musical family does the saxophone belong to?",
+    "options": [
+      "Jazz",
+      "Percussion",
+      "Strings",
+      "Woodwind"
+    ]
+  }
+]

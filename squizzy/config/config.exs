@@ -7,13 +7,10 @@
 # General application configuration
 use Mix.Config
 
-config :squizzy,
-  ecto_repos: [Squizzy.Repo]
-
 # Configures the endpoint
 config :squizzy, SquizzyWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "QMVxVgRMbDRSds7ZFLz2GvRFT6xsRnjq6YD132QtLvUGBCxBZTW1ZG6YGydper9w",
+  secret_key_base: "z5/ct/hMd/o55MQY7FIbbuDe5Jo3AfNFs990JmqF55ZbOygyjhgyeg45iY8339UH",
   render_errors: [view: SquizzyWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Squizzy.PubSub, adapter: Phoenix.PubSub.PG2]
 
