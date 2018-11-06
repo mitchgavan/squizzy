@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure your application as:
 #
-#     config :questions, key: :value
+#     config :dictionary, key: :value
 #
 # and access this configuration in your application as:
 #
-#     Application.get_env(:questions, :key)
+#     Application.get_env(:dictionary, :key)
 #
 # You can also configure a 3rd-party app:
 #
