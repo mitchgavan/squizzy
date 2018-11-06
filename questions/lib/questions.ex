@@ -9,8 +9,15 @@ defmodule Questions do
   end
 
   def random_question do
-    question_list()
+    get_questions()
     |> Enum.random()
+  end
+
+  def get_questions do
+    "../assets/quiz.json"
+    |> Path.expand(__DIR__)
+    |> File.read!()
+    |> Poison.Parser.parse!()
   end
 
 end
