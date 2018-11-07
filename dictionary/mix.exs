@@ -14,6 +14,8 @@ defmodule Dictionary.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      # whenever Dictionary is started, it will automatically start this application
+      mod: { Dictionary.Application, [] },
       extra_applications: [:logger, :poison]
     ]
   end
