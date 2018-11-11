@@ -10,7 +10,7 @@ use Mix.Config
 # Configures the endpoint
 config :squizzy, SquizzyWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "z5/ct/hMd/o55MQY7FIbbuDe5Jo3AfNFs990JmqF55ZbOygyjhgyeg45iY8339UH",
+  secret_key_base: "ujNjd918D6OSCUFqyPKQ9mb+FZJIcr8/i5+VW2zYPKmksUZZrSAIM5h1pQs0tyRh",
   render_errors: [view: SquizzyWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Squizzy.PubSub, adapter: Phoenix.PubSub.PG2]
 

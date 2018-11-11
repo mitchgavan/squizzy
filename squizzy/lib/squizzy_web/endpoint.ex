@@ -40,7 +40,7 @@ defmodule SquizzyWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_squizzy_key",
-    signing_salt: "PGeWUKAG"
+    signing_salt: "zEVu/QrE"
 
   plug SquizzyWeb.Router
 end
