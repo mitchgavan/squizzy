@@ -3,24 +3,22 @@ defmodule Squizzy.Accounts do
   The Accounts context.
   """
 
+  alias Squizzy.Repo
   alias Squizzy.Accounts.User
 
-  def list_users do
-    [
-      %User{id: "1", name: "Michael", username: "michaeljordan"},
-      %User{id: "2", name: "Kobe", username: "kobebryant"},
-      %User{id: "3", name: "Lebron", username: "lebronjames"}
-    ]
+  def get_user(id) do
+    Repo.get(User, id)
   end
 
-  def get_user(id) do
-    Enum.find(list_users(), fn map -> map.id == id end)
+  def get_user!(id) do
+    Repo.get!(User, id)
   end
 
   def get_user_by(params) do
-    Enum.find(list_users(),
-      fn map -> Enum.all?(params,
-        fn {key, val} -> Map.get(map, key) == val end)
-      end)
+    Repo.get_by(User, params)
+  end
+
+  def list_users do
+    Repo.all(User)
   end
 end
