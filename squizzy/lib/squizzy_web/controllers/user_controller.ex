@@ -26,6 +26,7 @@ defmodule SquizzyWeb.UserController do
     do
       {:ok, user} ->
         conn
+        |> SquizzyWeb.Auth.login(user)
         |> put_flash(:info, "#{user.name} created!")
         |> redirect(to: Routes.user_path(conn, :index))
 
