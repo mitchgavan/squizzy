@@ -20,7 +20,7 @@ defmodule SquizzyWeb.UserController do
   end
 
   def create(conn, %{"user" => user_params}) do
-    case Accounts.create_user(user_params)
+    case Accounts.register_user(user_params)
     do 
       {:ok, user} ->
         conn

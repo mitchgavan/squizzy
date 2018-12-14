@@ -5,6 +5,7 @@ defmodule Squizzy.Accounts do
 
   alias Squizzy.Repo
   alias Squizzy.Accounts.User
+  alias Squizzy.Accounts.Credential
 
   def get_user(id) do
     Repo.get(User, id)
@@ -32,7 +33,11 @@ defmodule Squizzy.Accounts do
     |> Repo.insert()
   end
 
-  alias Squizzy.Accounts.Credential
+  def register_user(attrs \\ %{}) do
+    %User{}
+    |> User.registration_changeset(attrs)
+    |> Repo.insert()
+  end
 
   @doc """
   Returns the list of credentials.
