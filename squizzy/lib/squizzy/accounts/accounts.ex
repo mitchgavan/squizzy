@@ -39,6 +39,30 @@ defmodule Squizzy.Accounts do
     |> Repo.insert()
   end
 
+  import Ecto.Query
+
+  def get_user_by_email(email) do
+    from(u in User, join: c in assoc(u, :credential), where: c.email == ^email)
+    |> Repo.one()
+    |> Repo.preload(:credential)
+  end
+
+  def authenticate_by_email_and_pass(email, given_pass) do
+    user = get_user_by_email(email)
+
+    cond do
+      user && Comeonin.Pbkdf2.checkpw(given_pass, user.credential.password_hash) ->
+        {:ok, user}
+      
+        user ->
+          {:error, :unauthorized}
+
+        true ->
+          Comeonin.Bcrypt.dummy_checkpw()
+          {:error, :not_found}
+    end
+  end
+
   @doc """
   Returns the list of credentials.
 
@@ -132,4 +156,5 @@ defmodule Squizzy.Accounts do
   def change_credential(%Credential{} = credential) do
     Credential.changeset(credential, %{})
   end
+
 end
