@@ -18,4 +18,10 @@ defmodule SquizzyWeb.SessionController do
         |> render("new.html")
     end
   end
+
+  def delete(conn, _) do
+    conn
+    |> SquizzyWeb.Auth.logout()
+    |> redirect(to: Routes.page_path(conn, :index))
+  end
 end
