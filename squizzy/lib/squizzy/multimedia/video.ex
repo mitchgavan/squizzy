@@ -7,7 +7,7 @@ defmodule Squizzy.Multimedia.Video do
     field :description, :string
     field :title, :string
     field :url, :string
-    field :user_id, :id
+    belongs_to :user, Squizzy.Accounts.User
 
     timestamps()
   end
