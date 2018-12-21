@@ -8,6 +8,7 @@ defmodule Squizzy.Multimedia do
 
   alias Squizzy.Multimedia.Video
   alias Squizzy.Accounts
+  alias Squizzy.Multimedia.Category
 
   @doc """
   Returns the list of videos.
@@ -71,6 +72,10 @@ defmodule Squizzy.Multimedia do
     |> Video.changeset(attrs)
     |> put_user(user)
     |> Repo.insert()
+  end
+
+  def create_category(name) do
+    Repo.get_by(Category, name: name) || Repo.insert!(%Category{name: name})
   end
 
   @doc """
