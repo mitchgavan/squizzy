@@ -32,6 +32,12 @@ defmodule Squizzy.Multimedia do
     |> preload_user()
   end
 
+  def list_alphabetical_categories() do
+    Category
+    |> Category.alphabetical()
+    |> Repo.all()
+  end
+
   @doc """
   Gets a single video.
 
