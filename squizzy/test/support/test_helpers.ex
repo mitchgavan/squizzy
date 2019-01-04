@@ -23,7 +23,7 @@ defmodule Squizzy.TestHelpers do
     user
   end
 
-  def video_fixture(%Accounts.User{} = user, attrs \\ ${}) do
+  def video_fixture(%Accounts.User{} = user, attrs \\ %{}) do
     attrs = Enum.into(attrs, %{
       title: "A Title",
       url: "http://google.com",

@@ -22,6 +22,7 @@ defmodule Squizzy.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import Squizzy.DataCase
+      import Squizzy.TestHelpers
     end
   end
 
