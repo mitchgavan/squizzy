@@ -19,6 +19,9 @@ defmodule SquizzyWeb.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
+
+      import Squizzy.TestHelpers
+      
       alias SquizzyWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
