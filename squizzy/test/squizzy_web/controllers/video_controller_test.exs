@@ -64,4 +64,20 @@ defmodule SquizzyWeb.VideoControllerTest do
       assert video_count() == count_before
     end
   end
+
+  test "authorises actions against access by other users", %{conn: conn} do
+    owner = user_fixture(username: "owner")
+    video = video_fixture(owner, @create_attrs)
+    non_owner = user_fixture(username: "sneaky")
+    conn = assign(conn, :current_user, non_owner)
+
+    assert_error_sent :not_found, fn -> get(conn, Routes.video_path(conn, :show, video)) end
+
+    assert_error_sent :not_found, fn -> get(conn, Routes.video_path(conn, :edit, video)) end
+
+    assert_error_sent :not_found, fn -> put(conn, Routes.video_path(conn, :update, video, video: @create_attrs)) end
+
+    assert_error_sent :not_found, fn -> delete(conn, Routes.video_path(conn, :delete, video)) end
+
+  end
 end
