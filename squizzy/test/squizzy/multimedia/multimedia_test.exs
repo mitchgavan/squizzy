@@ -9,9 +9,10 @@ defmodule Squizzy.MultimediaTest do
     test "list_alphabetical_categories/0" do
       for name <- ~w(Drama Action Comedy), do: Multimedia.create_category(name)
 
-      alpha_names = for %Category{name: name} <- Multimedia.list_alphabetical_categories() do
-        name
-      end
+      alpha_names =
+        for %Category{name: name} <- Multimedia.list_alphabetical_categories() do
+          name
+        end
 
       assert alpha_names == ~w(Action Comedy Drama)
     end
@@ -61,14 +62,14 @@ defmodule Squizzy.MultimediaTest do
       owner = user_fixture()
       %Video{id: id} = video = video_fixture(owner)
       assert {:error, %Ecto.Changeset{}} = Multimedia.update_video(video, @invalid_attrs)
-      assert %Video{id: ^id} = Multimedia.get_video!(id) 
+      assert %Video{id: ^id} = Multimedia.get_video!(id)
     end
 
     test "delete_video/1 deletes the video" do
       owner = user_fixture()
       video = video_fixture(owner)
       assert {:ok, %Video{}} = Multimedia.delete_video(video)
-      assert Multimedia.list_videos == []
+      assert Multimedia.list_videos() == []
     end
 
     test "change_video/2 returns a video changeset" do
